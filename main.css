@@ -1,0 +1,21 @@
+.sothich{
+    color: orangered;
+}
+.boder1{
+    text-align: center;
+    border: 10px cornflowerblue groove;
+    width: 400px;
+
+}
+table{
+    width: 100%;
+    align-items: center;
+}
+td{
+    text-align: left;
+}
+.box2 {
+    display: flex;
+    /*align-items: center;*/
+    justify-content: center;
+}

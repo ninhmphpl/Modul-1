@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>taoformdongian</title>
+    <link rel="stylesheet" href="main.css">
+</head>
+<body>
+<div class="box2">
+    <div class="boder1" c>
+        <form action="">
+            <table >
+                <tr style="background: aqua ">
+                    <th colspan="4">SỞ THÍCH CỦA BẠN</th>
+                </tr>
+                <tr>
+                    <td>Họ và tên</td>
+                    <td colspan="3">
+                        <input type="text" name="name">
+                    </td>
+                </tr>
+                <tr>
+                    <td>Email</td>
+                    <td colspan="3">
+                        <input type="text" name="email" style="width: 100px">
+                    </td>
+                </tr>
+                <tr>
+                    <td rowspan="4" tyle="text-align: right">Sở thích</td>
+                    <td class="sothich"><input type="checkbox" name="sothich" value="thethao">Thể thao</td>
+                    <td class="sothich"><input type="checkbox" name="sothich" value="amnhac">Âm Nhạc</td>
+                    <td class="sothich"><input type="checkbox" name="sothich" value="docsach">Đọc Sách</td>
+                </tr>
+                <tr>
+                    <td class="sothich"><input type="checkbox" name="sothich" value="luotweb">Lướt Web</td>
+                    <td class="sothich"><input type="checkbox" name="sothich" value="choigame">Chơi Game</td>
+                    <td class="sothich"><input type="checkbox" name="sothich" value="dienanh">Điện Ảnh</td>
+                </tr>
+                <tr>
+                    <td class="sothich"><input type="checkbox" name="sothich" value="dulich">Du Lịch</td>
+
+                </tr>
+                <tr>
+                    <td colspan="3"><input type="submit" value="Gửi thông tin"> <input type="reset" value="Nhâp lại"></td>
+                </tr>
+            </table>
+        </form>
+    </div>
+</div>
+<br><br>
+<div class="box2">
+    <div style="width: 500px; background: sandybrown" >
+        <form action="">
+            <table>
+                <tr>
+                    <th colspan="2" style="background: darkgrey; text-align: left">ĐĂNG KÝ HỌC VIÊN</th>
+                </tr>
+                <tr>
+                    <td>Họ và tên</td>
+                    <td><input type="text" name="name"></td>
+                </tr>
+                <tr>
+                    <td>Ngày sinh</td>
+                    <td><input type="date" name="date"></td>
+                </tr>
+                <tr>
+                    <td>Giới tính</td>
+                    <td>Nam<input type="radio" name="gender" value="mel"> Nữ <input type="radio" name="gender" value="femel"></td>
+                </tr>
+                <tr>
+                    <td>Địa chỉ</td>
+                    <td><textarea name="location" id="" cols="30" rows="5" style="resize: none"></textarea></td>
+                </tr>
+                <tr>
+                    <td>Lớp</td>
+                    <td>
+                        <select name="class" id="" >
+                            <option value="">-Chon lớp-</option>
+                            <option value="A">A</option>
+                            <option value="B">B</option>
+                            <option value="C">C</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Email</td>
+                    <td><input type="email" name="email" ></td>
+                </tr>
+                <tr>
+                    <td>Điện thoại</td>
+                    <td><input type="tel" name="phone"></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td><input type="submit" value="Đăng ký"> <input type="reset" value="Nhập lại"></td>
+                </tr>
+            </table>
+        </form>
+    </div>
+</div>
+</body>
+</html>
