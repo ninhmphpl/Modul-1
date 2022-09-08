@@ -8,25 +8,31 @@
 <p>Nhập dữ liệu vào đây</p>
 <input type="text" value="HelloWorld" id="text">
 <button onclick="lick2()">ClickMe</button>
+<button onclick="alertxinchao()">Alert "xin chao"</button>
+<button onclick="innerxinchao()">Inner "xin chao"</button>
+<button onclick="writexinchao()">Write "xin chao"</button>
 <button onclick="reset1()">Reset</button>
-
-<button onclick="doimau()">Red</button>
-
 <div id="resul"></div>
 <script>
-    function lick2(){
+    function lick2() {
         let a = document.getElementById('text').value;
         alert(a);
         console.log(a);
-        document.getElementById('resul').innerHTML='<h1>'+ a + '</h1>'
-
+        document.getElementById('resul').innerHTML = '<h1>' + a + '</h1>'
+    }
+    function alertxinchao(){
+            alert("xinchao")
+    }
+    function innerxinchao(){
+        document.getElementById("resul").innerText = "xin chao"
+    }
+    function writexinchao(){
+        document.write("xin chao")
     }
     function reset1(){
         document.getElementById('resul').innerHTML=null
     }
-    function doimau(){
-        document.getElementById('resul').style.backgroundColor="red"
-    }
+
 </script>
 </body>
 </html>
