@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Calutor</title>
+</head>
+<body>
+<h1>Caculator</h1>
+<div>
+    <table>
+        <tr>
+            <td colspan="2"><input type="number" id="one" value="5"></td>
+            <td colspan="2"><input type="number" id="two" value="6"></td>
+        </tr>
+        <tr>
+            <td onclick="cong()"><button>(+)</button></td>
+            <td onclick="tru()"><button>(-)</button></td>
+            <td onclick="nhan()"><button>(x)</button></td>
+            <td onclick="chia()"><button>(/)</button></td>
+        </tr>
+    </table>
+</div>
+<div id="ketqua"></div>
+<script>
+    function laybien(){
+        let vara = +document.getElementById('one').value;
+        let varb = +document.getElementById('two').value;
+        return [vara,varb];
+    }
+
+    function cong(){
+        let [a,b]=laybien();
+        inketqua = a+b
+        console.log(inketqua)
+        document.getElementById('ketqua').innerText = inketqua
+    }
+    function tru(){
+        let [a,b]=laybien();
+        inketqua = a-b
+        document.getElementById('ketqua').innerText = inketqua
+    }
+    function nhan(){
+        let [a,b]=laybien();
+        inketqua = a*b
+        document.getElementById('ketqua').innerText = inketqua
+    }
+    function chia(){
+        let [a,b]=laybien();
+        inketqua = a/b
+        document.getElementById('ketqua').innerText = inketqua
+    }
+
+
+</script>
+</body>
+</html>

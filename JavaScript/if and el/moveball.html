@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Move ball</title>
+    <style>
+    </style>
+
+</head>
+<body>
+<div style="width: 600px; height: 50px; background-color: red" id="khungvien" >
+    <img style="width: 50px; height: 50px" class="move" src="1.png" alt="qua bong" id="quabong">
+
+</div>
+<div>
+    <button onclick="clickme()">Click to move ball to right</button>
+</div>
+
+<script>
+
+    let firstlocation = 0
+    let string1 = document.getElementById('khungvien').style.width
+    let string2 = document.getElementById('quabong').style.width
+    let number_khungvien= +(string1.slice(0,string1.length-2))
+    console.log(number_khungvien)
+    let number_quabong = +(string2.slice(0,string2.length-2))
+    console.log(number_quabong)
+    function clickme(){
+        let max_weith = number_khungvien - number_quabong
+        console.log(max_weith);
+        firstlocation += 50
+        if (firstlocation >= max_weith){
+            firstlocation = number_khungvien-number_quabong;
+            console.log(firstlocation)
+        }
+        document.getElementById('quabong').style.paddingLeft = firstlocation + 'px'
+        console.log(firstlocation)
+
+
+    }
+</script>
+
+</body>
+</html>

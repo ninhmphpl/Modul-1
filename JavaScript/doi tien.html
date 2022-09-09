@@ -20,13 +20,13 @@
     </tr>
     <tr>
       <td><input type="number" name="amount" id="idmount"></td>
-      <td class="oo1"><select name="currency" id="idcurrency">
+      <td class="oo1"><select id="idcurrency">
         <option value="23000">VND</option>
         <option value="1">USD</option>
       </select></td>
-      <td class="oo1"><select name="tocurrency" id="idtocurrency">
-        <option value="1">USD</option>
-        <option value="23000">VND</option>
+      <td class="oo1"><select id="idtocurrency">
+        <option value="1" name="usd">USD</option>
+        <option value="23000"name="vnd">VND</option>
       </select></td>
       <td><button onclick="convert()">Convert</button></td>
     </tr>
@@ -42,6 +42,8 @@
     console.log(tocurrency1);
     let output = value * (tocurrency1/currency1)
     document.getElementById('output').innerText = "result: " +output;
+    let ood1 = document.getElementById('idtocurrency');
+    console.log(ood1);
   }
 
 
