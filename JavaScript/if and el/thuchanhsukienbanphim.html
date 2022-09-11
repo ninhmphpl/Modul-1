@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Thuc hanh su kien ban phim</title>
+</head>
+<body onload="docReady()">
+<div style="width: 100%; height: 100%">
+    <img style="position: absolute; height: 50px; width: 50px; left: 100px; top: 100px" src="1.png" alt="qua bong" id="nobita">
+</div>
+
+<script>
+    console.log(parseInt(document.getElementById("nobita").style.top))
+    function upArrowPressed() {
+        let element = document.getElementById("nobita");
+        element.style.top = parseInt(element.style.top) - 5 + 'px';
+        console.log(element.style.top)
+    }
+    function downArrowPressed() {
+        var element = document.getElementById("nobita");
+        element.style.top = parseInt(element.style.top) + 5 + 'px';
+    }
+    function leftArrowPressed() {
+        var element = document.getElementById("nobita");
+        element.style.left = parseInt(element.style.left) - 5 + 'px';
+    }
+    function rightArrowPressed() {
+        var element = document.getElementById("nobita");
+        element.style.left = parseInt(element.style.left) + 5 + 'px';
+
+    }
+  function moveSelection(evt) {
+    console.log(evt.keyCode)
+    switch (evt.keyCode) {
+      case 37:
+        leftArrowPressed();
+        break;
+      case 39:
+        rightArrowPressed();
+        break;
+      case 38:
+        upArrowPressed();
+        break;
+      case 40:
+        downArrowPressed();
+        break;
+    }
+  }
+  function docReady() {
+    window.addEventListener('keydown', moveSelection);
+  }
+</script>
+</body>
+</html>
