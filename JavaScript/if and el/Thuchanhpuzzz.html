@@ -9,7 +9,6 @@
       height: 150px;
       margin: 5px;
       float: left;
-        border: 5px red solid;
 
     }
   </style>
@@ -50,7 +49,6 @@
         'puzz/img/panda_swap_part4x1.jpg',
         'puzz/img/panda_swap_part5x1.jpg']]
     }
-    // console.log(ham.ida[1])
 
     for (let i = 0; i <= 4; i++) {
         ham.nb[i] = Math.floor(Math.random() * 2);
@@ -64,11 +62,17 @@
         if (ham.nb[a]>2){
             ham.nb[a] = 0
         }
+        document.getElementById(ham.ida[a]).src = ham.imga[ham.nb[a]][a]
         if ((ham.nb[0] == ham.nb[1]) && (ham.nb[0] == ham.nb[2]) && (ham.nb[0] == ham.nb[3]) && (ham.nb[0] == ham.nb[4])){
-            anhdd.classList
+            for (let i = 0; i < 5; i++) {
+                document.getElementById(ham.ida[i]).style.border = '5px green solid'
+            }
         } else {
+
+            for (let i = 0; i < 5; i++) {
+                document.getElementById(ham.ida[i]).style.border = '3px red solid'
+            }
         }
-        document.getElementById(ham.ida[a]).src = ham.imga[ham.nb[a]][a];
     }
 
 
