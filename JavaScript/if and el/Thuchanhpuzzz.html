@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Puzzz</title>
+  <style>
+    .anhdd{
+      width: 600px;
+      height: 150px;
+      margin: 5px;
+      float: left;
+        border: 5px red solid;
+
+    }
+  </style>
+</head>
+<body style="width: 160px">
+<div>
+  <img id="anh0" class="anhdd" src="" alt="" onclick="clicka(0)">
+  <img id="anh1" class="anhdd" src="" alt="" onclick="clicka(1)">
+  <img id="anh2" class="anhdd" src="" alt="" onclick="clicka(2)">
+  <img id="anh3" class="anhdd" src="" alt="" onclick="clicka(3)">
+  <img id="anh4" class="anhdd" src="" alt="" onclick="clicka(4)">
+
+</div>
+<script>
+    let ham = {
+        nb:
+            [
+                0,0,0,0,0
+            ],
+        ida:
+            [
+                'anh0','anh1','anh2','anh3','anh4'
+            ],
+        imga:
+            [['puzz/img/funny-cat1_part1x1.jpg',
+        'puzz/img/funny-cat1_part2x1.jpg',
+        'puzz/img/funny-cat1_part3x1.jpg',
+        'puzz/img/funny-cat1_part4x1.jpg',
+        'puzz/img/funny-cat1_part5x1.jpg'],
+        ['puzz/img/monkey_part1x1.jpg',
+        'puzz/img/monkey_part2x1.jpg',
+        'puzz/img/monkey_part3x1.jpg',
+        'puzz/img/monkey_part4x1.jpg',
+        'puzz/img/monkey_part5x1.jpg'],
+        ['puzz/img/panda_swap_part1x1.jpg',
+        'puzz/img/panda_swap_part2x1.jpg',
+        'puzz/img/panda_swap_part3x1.jpg',
+        'puzz/img/panda_swap_part4x1.jpg',
+        'puzz/img/panda_swap_part5x1.jpg']]
+    }
+    // console.log(ham.ida[1])
+
+    for (let i = 0; i <= 4; i++) {
+        ham.nb[i] = Math.floor(Math.random() * 2);
+        document.getElementById(ham.ida[i]).src = ham.imga[ham.nb[i]][i]
+    }
+    
+    function clicka(a){
+        console.log(ham.imga[ham.nb[a]][a])
+        ham.nb[a]++
+        console.log(ham.nb[a])
+        if (ham.nb[a]>2){
+            ham.nb[a] = 0
+        }
+        if ((ham.nb[0] == ham.nb[1]) && (ham.nb[0] == ham.nb[2]) && (ham.nb[0] == ham.nb[3]) && (ham.nb[0] == ham.nb[4])){
+            anhdd.classList
+        } else {
+        }
+        document.getElementById(ham.ida[a]).src = ham.imga[ham.nb[a]][a];
+    }
+
+
+</script>
+</body>
+</html>

@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Mini Test</title>
+</head>
+<body>
+<div>
+    <h2>a. nhập cạnh a để hiển thì chu vi là diện tính hình vuông </h2>
+    Nhập giá trị a: <input type="number" id="phan_a_a">
+    <p id="ketquaa">Kết quả: </p>
+    <button onclick="functiona()">Click</button>
+</div>
+<div>
+    <h2>b.Nhập a và b để tính a^2 và a^b</h2>
+    Nhập giá trị a: <input type="number" id="phan_b_a"><br>
+    Nhập giá trị b: <input type="number" id="phan_b_b"><br>
+    <p id="ketquab">Kết quả:</p>
+    <button onclick="functionb()">Click</button>
+</div>
+<div>
+    <h2>c.Nhập a và b để tính tổng các số từ a đến b</h2>
+    Nhập giá trị a: <input type="number" id="phan_c_a"><br>
+    Nhập giá trị b: <input type="number" id="phan_c_b"><br>
+    <p id="ketquac">Kết quả:</p>
+    <button onclick="functionc()">Click</button>
+</div>
+<div>
+    <h2>d.Nhập giá trị năm là a, in ra thế kỷ</h2>
+    Nhập giá trị a: <input type="number" id="phan_d_a"><br>
+    <p id="ketquad">Kết quả:</p>
+    <button onclick="functiond()">Click</button>
+</div>
+<div>
+    <h2>e. kiểm tra a, b, c có phải là cạnh của tam giác</h2>
+    Nhập giá trị cạnh a: <input type="number" id="phan_e_a"><br>
+    Nhập giá trị cạnh b: <input type="number" id="phan_e_b"><br>
+    Nhập giá trị cạnh c: <input type="number" id="phan_e_c"><br>
+    <p id="ketquae">Kết quả:</p>
+    <button onclick="functione()">Click</button>
+</div>
+<script>
+    function functiona(){
+        let a = +document.getElementById('phan_a_a').value
+        document.getElementById('ketquaa').innerText = 'Chu vi hình vuông: ' + (a*4) +' Diện tích hình vuông là: '+ (a*a)
+    }
+    function functionb(){
+        let a = +document.getElementById('phan_b_a').value
+        let b = +document.getElementById('phan_b_b').value
+        document.getElementById('ketquab').innerText = '(a^2) = ' + (a**2) + '  và (a^b) = ' + (a**b)
+    }
+    function functionc(){
+
+        let a = +document.getElementById('phan_c_a').value
+        let b = +document.getElementById('phan_c_b').value
+        let c=0;
+        console.log(a,b,c)
+        if (a<b){
+            c=(a+b)*(b-a + 1)/2
+        } else {
+            c=(a+b)*(a-b +1)/2
+        }
+        document.getElementById('ketquac').innerText = 'Kết quả: ' + c
+
+
+    }
+    function functiond(){
+        let a = +document.getElementById('phan_d_a').value
+        document.getElementById('ketquad').innerText = 'Kết quả: ' + (parseInt(((a-1)/100)+1))
+    }
+    function functione() {
+        let a = +document.getElementById('phan_e_a').value
+        let b = +document.getElementById('phan_e_b').value
+        let c = +document.getElementById('phan_e_c').value
+        let d = 'Đây là: '
+        // console.log(((a+b)>c) || ((b+c)>a) || ((c+a)>b))
+
+        if (((a+b)>c) && ((b+c)>a) && ((c+a)>b)){
+            d += 'là cạnh của tam giác,'
+            if ((a==b) || (b==c) || (a==c)){
+
+                if ((a==b) && (b==c) && (a==c)){
+                    d += 'là hình tam giác đều, '
+                    console.log('tam giac deu')
+                }else{
+                    d += 'là tam giác cân'
+                }
+            }
+
+            if ((a**2 == b**2 + c**2) ||(a**2 + b**2 == c**2) || (a**2 + c**2== b**2) ){
+                d += 'là tam giác vuông, '
+            }
+        }else{
+            d += 'Không phải là cạnh của tam giác, '
+        }
+
+        document.getElementById('ketquae').innerText =d
+
+    }
+
+
+</script>
+</body>
+</html>
