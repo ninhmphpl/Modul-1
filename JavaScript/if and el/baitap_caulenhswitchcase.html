@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài tập câu lênh Switch case</title>
+</head>
+<body>
+<div>
+    Nhập tháng: <input type="number" id="month" placeholder=" VD: 1">
+    <button onclick="runmonth()">Xác nhận</button>
+</div>
+<p id="ngay"></p>
+<script>
+function runmonth(){
+    let a = +document.getElementById('month').value;
+    let b;
+    switch (a){
+        case 1:
+        case 3:
+        case 5:
+        case 7:
+        case 8:
+        case 10:
+        case 12:
+            b = '31 ngày'
+            break;
+        case 4:
+        case 6:
+        case 9:
+        case 11:
+            b = '30 ngày'
+            break;
+        case 2:
+            b = '28 ngày'
+            break;
+        default:
+            b = 'Không có tháng này'
+    }
+    document.getElementById('ngay').innerText = b
+}
+</script>
+</body>
+</html>
