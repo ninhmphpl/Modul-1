@@ -29,9 +29,9 @@
         element.style.left = parseInt(element.style.left) + 5 + 'px';
 
     }
-  function moveSelection(evt) {
-    console.log(evt.keyCode)
-    switch (evt.keyCode) {
+  function moveSelection(ou) {
+    console.log(ou.keyCode)
+    switch (ou.keyCode) {
       case 37:
         leftArrowPressed();
         break;
@@ -46,9 +46,9 @@
         break;
     }
   }
-  function docReady() {
+
     window.addEventListener('keydown', moveSelection);
-  }
+
 </script>
 </body>
 </html>
