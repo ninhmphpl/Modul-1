@@ -1,0 +1,4 @@
+for - each
+Truy cap vao toan bo phan tu trong mang va object
+Cau truc
+bien.forEach(function())
