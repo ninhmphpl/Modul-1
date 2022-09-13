@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bang Cuu Chuong</title>
+  <style>
+    table{
+        width: 900px;
+        border: 1px black solid;
+    }
+    td{
+        border: 1px black solid;
+    }
+  </style>
+</head>
+<body>
+<script>
+  document.write('<table>')
+  for (let i = 1; i < 10; i++) {
+    document.write('<tr>')
+    for (let j = 2; j < 10; j++) {
+      document.write('<td>' + j + 'x' + i +'=' + (i*j) + '</td>')
+    }
+    document.write('</tr>')
+  }
+  document.write('</table>')
+</script>
+</body>
+</html>
