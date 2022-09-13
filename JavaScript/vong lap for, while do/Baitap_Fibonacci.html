@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Fibonacci</title>
+</head>
+<body>
+<script>
+  let affernumber = 0;
+  console.log(affernumber)
+  let numbernow = 1;
+  console.log(numbernow)
+  let nextnumber = numbernow + affernumber
+  console.log(nextnumber)
+  for (let i = 0; i < 19; i++) {
+    affernumber = numbernow
+    numbernow = nextnumber
+    nextnumber = numbernow + affernumber
+    if ((nextnumber%5)==0){
+      console.log('so chia het cho 5')
+    }
+
+    console.log(nextnumber)
+  }
+
+</script>
+</body>
+</html>
