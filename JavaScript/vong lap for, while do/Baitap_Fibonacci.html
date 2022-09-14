@@ -5,23 +5,23 @@
     <title>Fibonacci</title>
 </head>
 <body>
+<p id="resuil"></p>
 <script>
   let affernumber = 0;
-  console.log(affernumber)
   let numbernow = 1;
-  console.log(numbernow)
-  let nextnumber = numbernow + affernumber
-  console.log(nextnumber)
+  let chuoi='' + affernumber + '<br>' + numbernow + '<br>'
   for (let i = 0; i < 19; i++) {
-    affernumber = numbernow
-    numbernow = nextnumber
-    nextnumber = numbernow + affernumber
-    if ((nextnumber%5)==0){
-      console.log('so chia het cho 5')
-    }
+      nextnumber = numbernow + affernumber
+      affernumber = numbernow
+      numbernow = nextnumber
+      chuoi += nextnumber + '<br>'
+        if ((nextnumber%5)==0){
+          console.log('so chia het cho 5')
+        }
+        console.log(nextnumber)
 
-    console.log(nextnumber)
   }
+  document.getElementById('resuil').innerHTML= chuoi
 
 </script>
 </body>
