@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>ve hinh tam giac</title>
+</head>
+<body>
+<div>
+    <p id='hinhtamgiac1'></p>
+</div>
+<div>
+    <p id='hinhtamgiac2'></p>
+</div>
+<div>
+    <p id='tg3'></p>
+</div>
+<div>
+    <p id='tg4'></p>
+</div>
+<script>
+
+
+  vehinhtamiac('*','&nbsp;&nbsp;','hinhtamgiac1')
+  vehinhtamiac('&nbsp;&nbsp;','*','hinhtamgiac2')
+  vehinhtamiac2('&nbsp;&nbsp;','*','tg3')
+  vehinhtamiac2('*','&nbsp;&nbsp;','tg4')
+
+
+  function vehinhtamiac(a,b,id){
+    console.log('hinh1')
+    let chuoi=""
+    for (let i = 0; i <= 9; i++) {
+      let kytu = a
+      for (let j = 0; j <= 10; j++) {
+        chuoi += kytu
+        if ((j)==(9-i)){
+          kytu = b
+        }
+      }
+      chuoi +='<br>'
+    }
+    document.getElementById(id).innerHTML= chuoi
+  }
+  function vehinhtamiac2(a,b,id){
+    console.log('hinh1')
+    let chuoi=""
+    for (let i =0; i < 10; i++) {
+      let kytu = a
+      for (let j = 0; j <= 10; j++) {
+        chuoi += kytu
+        if ((j)==(i)){
+          kytu = b
+        }
+      }
+      chuoi +='<br>'
+    }
+    document.getElementById(id).innerHTML= chuoi
+  }
+
+
+
+</script>
+</body>
+</html>

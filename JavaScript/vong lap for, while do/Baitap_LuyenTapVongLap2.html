@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Luyen tap vong lap 2</title>
+</head>
+<body>
+<h1>Tinh Giai Thua</h1>
+<div>
+    Nhap Giai Thua <input type="number" id="giaithua"><button onclick="hamgiaithua()">Submit</button>
+    <p id='ketquagiaithua'></p>
+</div>
+
+<script>
+function hamgiaithua() {
+    let n = document.getElementById('giaithua').value;
+    let chuoigiaithua = ''
+    let a = 1;
+    let b;
+    for (let i = 1; i < n; i++) {
+        b = a * i
+        chuoigiaithua += b + '<br>'
+        a = b
+        document.getElementById('ketquagiaithua').innerHTML = chuoigiaithua
+    }
+}
+
+
+</script>
+</body>
+</html>

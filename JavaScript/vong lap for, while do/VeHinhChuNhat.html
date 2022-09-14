@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Ve hinh chu nhat</title>
+</head>
+<body>
+<p id="hinhchunhat"></p>
+<script>
+
+  hinhchunhat(100,10)
+
+  function hinhchunhat(a,b) {
+    let chuoi = '';
+    for (let i = 0; i < a; i++) {
+      chuoi += '*'
+    }
+    chuoi += "<br>"
+    for (let i = 0; i < (b-2); i++) {
+      chuoi += '*'
+      for (let j = 0; j < (a - 2); j++) {
+        chuoi += '&nbsp;&nbsp;'
+      }
+      chuoi += '*<br>'
+    }
+    for (let i = 0; i < a; i++) {
+      chuoi += '*'
+    }
+    document.getElementById('hinhchunhat').innerHTML = chuoi
+  }
+</script>
+</body>
+</html>
