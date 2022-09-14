@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Cho vòng lặp từ 1-100 nếu chia hết cho 3 in ra Fizz, chia hết cho 5 in ra Buss, chia hết cả 3 và 5 in ra FizzBuss</title>
+
+</head>
+<body>
+<script>
+  for (let i = 0; i < 101; i++) {
+    console.log(i)
+    if ((i%3==0) && (i%5==0)){
+      console.log('FizzBuss')
+    }else if (i%3==0){
+      console.log("Fizz")
+    }else if (i%5==0){
+      console.log('Buss')
+    }
+  }
+</script>
+</body>
+</html>

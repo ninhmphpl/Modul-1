@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Làm game đoán số</title>
+</head>
+<body>
+<h>Hãy thử đoán xem</h>
+<p id="result"></p>
+<button onclick="playgame()">Chơi</button>
+<script>
+  function playgame(){
+      let a = +prompt("nhập khoảng a: ")
+      let b = +prompt("đến khoảng b: ")
+      let c;
+      let result = Math.floor(Math.random() * (b-a))+a
+      while (true){
+          c = +prompt("Đoán nào, là số bao nhiêu")
+          if (c<result){
+              alert('sai rồi, lớn hơn nha')
+          } else if (c>result){
+              alert('sai rồi, nhỏ hơn nha')
+          } else {
+              document.getElementById('result').innerText = 'đúng rồi nha hehe'
+              break;
+          }
+      }
+
+  }
+</script>
+</body>
+</html>

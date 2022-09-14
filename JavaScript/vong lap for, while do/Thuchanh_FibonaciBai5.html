@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Fibonacci</title>
+</head>
+<body>
+<p id="resuil"></p>
+<script>
+  let affernumber = 0;
+  let numbernow = 1;
+  let total = numbernow
+  for (let i = 0; i < 19; i++) {
+    nextnumber = numbernow + affernumber
+    affernumber = numbernow
+    numbernow = nextnumber
+    total += nextnumber
+
+
+  }
+  document.getElementById('resuil').innerHTML= total
+
+</script>
+</body>
+</html>
