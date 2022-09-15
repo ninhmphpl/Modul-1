@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Caro</title>
+    <style>
+        table{
+            border-collapse: collapse;
+        }
+        td{
+            border: 1px solid;
+            width: 20px;
+            height: 20px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+<!--<td onclick="change(,)"></td>-->
+<h1>Caro Game Simple</h1>
+<div id="create_caro"></div>
+<script>
+    let v_string = ''
+    let caro = new Array(10)
+    v_string += '<table>'
+    for (let i = 0; i < caro.length; i++) {
+        v_string += '<tr>'
+        caro[i] = new Array();
+        for (let j = 0; j < 10 ; j++) {
+            caro[i].push('0')
+            v_string += '<td onClick="change(' + i + ',' + j + ')" id="idcaro' + i + j + '"></td>'
+        }
+        v_string += '</tr>'
+    }
+    v_string += '</table>'
+    document.getElementById('create_caro').innerHTML = v_string
+
+    let play = 'O'
+    function change(i,j){
+        let id = 'idcaro'+ i + j
+        console.log(id)
+        document.getElementById(id).innerText = play
+        if (play == 'O') {
+            play ='X'
+        }else{
+            play = 'O'
+        }
+
+    }
+
+
+</script>
+</body>
+</html>
