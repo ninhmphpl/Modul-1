@@ -18,33 +18,162 @@
 <body>
 <!--<td onclick="change(,)"></td>-->
 <h1>Caro Game Simple</h1>
+<button onclick="playgame()">Play Game</button>
 <div id="create_caro"></div>
 <script>
-    let v_string = ''
-    let caro = new Array(10)
-    v_string += '<table>'
-    for (let i = 0; i < caro.length; i++) {
-        v_string += '<tr>'
-        caro[i] = new Array();
-        for (let j = 0; j < 10 ; j++) {
-            caro[i].push('0')
-            v_string += '<td onClick="change(' + i + ',' + j + ')" id="idcaro' + i + j + '"></td>'
-        }
-        v_string += '</tr>'
-    }
-    v_string += '</table>'
-    document.getElementById('create_caro').innerHTML = v_string
 
-    let play = 'O'
-    function change(i,j){
-        let id = 'idcaro'+ i + j
-        console.log(id)
-        document.getElementById(id).innerText = play
-        if (play == 'O') {
-            play ='X'
-        }else{
-            play = 'O'
+    let tick = 'O'
+    var caro = new Array(10)
+
+    function playgame(){
+        let v_string = ''
+        v_string += '<table>'
+        for (let i = 0; i < caro.length; i++) {
+            v_string += '<tr>'
+            caro[i] = new Array();
+            for (let j = 0; j < 10 ; j++) {
+                caro[i].push('')
+                v_string += '<td onClick="change(' + i + ',' + j + ')" id="idcaro' + i + j + '">'+caro[i][j]+'</td>'
+            }
+            v_string += '</tr>'
         }
+        v_string += '</table>'
+        document.getElementById('create_caro').innerHTML = v_string
+        console.log(caro)
+    }
+
+
+    function change(i,j){
+        if (caro[i][j] != ''){
+            return
+        }
+        let id = 'idcaro'+ i + j
+        caro[i][j] = tick
+        document.getElementById(id).innerText = caro[i][j]
+        let winer
+        let checkvitory
+        [winer,checkvitory] = check(i,j,tick)
+        if (checkvitory == true){
+            alert(winer + ' is Winer')
+        }
+        if (tick == 'O') {
+            tick ='X'
+        }else{
+            tick = 'O'
+        }
+    }
+
+    function check(i,j,kq){
+        let check = false
+       // xet chieu doc
+        console.log('xet chieu doc')
+        let y = i
+        let cout = 0
+        while (true){
+            ++y
+            if((y<caro.length) && (caro[y][j] == kq)){
+                cout++
+            }else{
+                break
+            }
+        }
+        y = i
+        while (true){
+            --y
+            if ((y >= 0) && (caro[y][j] == kq)){
+                cout++
+            }else{
+                break
+            }
+        }
+
+        if (cout >= 4){
+            check = true
+            return[kq,true]
+        }
+        //xet chieu ngang
+        console.log('xet chieu ngang')
+        let x = j
+        cout = 0
+        while (true){
+            ++x
+            if((y<caro.length) && (caro[i][x] == kq)){
+                cout++
+            }else{
+                break
+            }
+        }
+        x = j
+        while (true){
+            --x
+            if ((y >= 0) && (caro[i][x] == kq)){
+                cout++
+            }else{
+                break
+            }
+        }
+        if (cout >= 4){
+            return[kq,true]
+        }
+        // xet chieu cheo 1
+        console.log('xet chieu cheo 1')
+        x = j
+        y = i
+        cout = 0
+        while (true){
+            ++x
+            ++y
+            if((x<caro[0].length) && (y<caro.length) && (caro[y][x] == kq)){
+                cout++
+            }else{
+                break
+            }
+        }
+        x = j
+        y = i
+        while (true){
+            --x
+            --y
+            if ((x >= 0) && (y >= 0) && (caro[y][x] == kq)){
+                cout++
+            }else{
+                break
+            }
+        }
+        if (cout >= 4){
+            return[kq,true]
+        }
+
+        // xet chieu cheo 2
+        console.log('xet chieu cheo 2')
+
+        x = j
+        y = i
+        cout = 0
+        while (true){
+            ++x
+            --y
+            if((x<caro[0].length) && (y >= 0) && (caro[y][x] == kq)){
+                cout++
+            }else{
+                break
+            }
+        }
+        x = j
+        y = i
+        while (true){
+            --x
+            ++y
+            if ((x >= 0) && (y < caro.length) && (caro[y][x] == kq)){
+                cout++
+            }else{
+                break
+            }
+        }
+        if (cout >= 4){
+            return[kq,true]
+        }
+        return['no',false]
 
     }
 
