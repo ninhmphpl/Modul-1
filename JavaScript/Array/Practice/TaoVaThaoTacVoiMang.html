@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tạo và thao tác với mảng</title>
+</head>
+<body>
+<h2>Sample Screen</h2>
+<input type="number" id="number">
+<button onclick="f_add()">Add</button>
+<button onclick="f_display()">Dislay</button>
+<p id="result"></p>
+<script>
+    let array = new Array()
+    function f_add(){
+        let value = document.getElementById('number').value
+        array.push(value)
+    }
+
+    function f_display(){
+        let chuoi = ''
+        for (let i = 0; i < array.length; i++) {
+            chuoi += '<hr>' + 'Element '+ i +'=' + array[i]
+        }
+        document.getElementById('result').innerHTML = chuoi
+    }
+</script>
+</body>
+</html>

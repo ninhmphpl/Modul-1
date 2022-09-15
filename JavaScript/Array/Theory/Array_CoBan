@@ -1,0 +1,91 @@
+cách lấy độ dài của mảng
+    let a = ['java', 'PHP', 'JS', 'C++'] // khai báo mảng
+    let cout = a.length // KQ: 3: lấy độ dài của mảng
+
+Hàm toString chuyển kiểu dư liệu Array sang String
+    let arr = [1,2,3,4,5,6,7,8,9]
+    let result = arr.toString()
+    console.log(arr)
+    console.log(result)
+    //[1, 2, 3, 4, 5, 6, 7, 8, 9]
+    //"1,2,3,4,5,6,7,8,9"
+
+Hàm join chuyển kiểu dữ liệu sang String nhưng có thể thay kiểu nối.
+    let arr = [1,2,3,4,5,6,7,8,9]
+    console.log(arr.join()) // "1,2,3,4,5,6,7,8,9"
+    console.log(arr.join('')) // 123456789
+    console.log(arr.join('-')) // 1-2-3-4-5-6-7-8-9
+
+Hàm sort() sẽ giúp sắp xếp các phần tử của mảng theo một trật tự nhất định.
+    let arr = ["Posche", "Toyota","BB", "Subaru", "BMW"]
+    arr.sort()
+    document.write(arr)
+    // BB,BMW,Posche,Subaru,Toyota
+
+    let arr = [234,32,1,323,4,3,2,1,10,34]
+    arr.sort()
+    document.write(arr)
+    // 1,1,10,2,234,3,32,323,34,4
+
+Hàm reverse() đảo ngược trật tự của một mảng.
+    let arr = ["Toyota", "Subaru", "BMW"]
+    document.write(arr.sort() + "<br>")
+    document.write(arr.reverse())
+
+    //BMW,Subaru,Toyota
+    //Toyota,Subaru,BMW
+
+Hàm push() sẽ thêm một phần tử mới vào phần cuối của mảng.
+    let cars = ["Posche", "Toyota","BB", "Subaru", "BMW"]
+    cars.push("Kia")
+    console.log(cars[cars.length - 1])
+    console.log(cars)
+    // Kia
+    // ["Posche", "Toyota","BB", "Subaru", "BMW", "Kia"]
+
+Hàm unshift sẽ thêm 1 phần tử mới vào đầu mảng.
+    let cars = ["Posche", "Toyota","BB", "Subaru", "BMW"]
+    cars.unshift("Kia")
+    console.log(cars)
+    //['Kia', 'Posche', 'Toyota', 'BB', 'Subaru', 'BMW']
+
+Hàm pop() sẽ lấy đi phần tử cuối cùng của mảng.
+    let cars = ["Posche", "Toyota","BB", "Subaru", "BMW"]
+    cars.pop()
+    console.log(cars)
+    // ['Posche', 'Toyota', 'BB', 'Subaru']
+
+Hàm shift() sẽ lấy đi phần tử đầu tiên của mảng.
+    let cars = ["Posche", "Toyota","BB", "Subaru", "BMW"]
+    cars.shift()
+    console.log(cars)
+
+Hàm splicice() có thế xóa, cắt và chèn phần tử mới vào mảng
+    let cars = ["Posche", "Toyota","BB", "Subaru", "BMW"]
+    cars.splice(1, 1)// (vị trí, số phần tử muốn xoá)
+    console.log(cars)
+    //['Posche', 'BB', 'Subaru', 'BMW']
+    # Xoá và thêm phần tử mới vào.
+    let cars = ["Posche", "Toyota","BB", "Subaru", "BMW"]
+    cars.splice(1, 0, 'Kia')
+    console.log(cars)
+    //['Posche', 'Kia', 'Toyota', 'BB', 'Subaru', 'BMW']
+
+Hàm concat() dùng để nối Array
+    let cars = ["Posche", "Toyota","BB", "Subaru", "BMW"]
+    let cars2 = ['kia','cheveres', 'lambonighi']
+    console.log(cars.concat(cars2))
+    //['Posche', 'Toyota', 'BB', 'Subaru', 'BMW', 'kia', 'cheveres', 'lambonighi']
+
+Hàm slice() dùng để cắt phần tử của mảng
+    let cars = ["Posche", "Toyota","BB", "Subaru", "BMW"]
+    console.log(cars.slice(1,2))
+    // ['Toyota']
+    console.log(cars)
+    // ['Posche', 'Toyota', 'BB', 'Subaru', 'BMW']
+    console.log(cars.slice(1,2))
+    // ['Toyota', 'BB', 'Subaru', 'BMW']
+    console.log(cars.slice(1,2))
+    // ['Subaru']
+
+
