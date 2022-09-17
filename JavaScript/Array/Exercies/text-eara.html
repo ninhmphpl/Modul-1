@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Text - Eara</title>
+</head>
+<body>
+<form name="f">
+    <textarea name="txt" cols="40" rows="10" onkeydown="typeTextarea();"></textarea>
+</form><button onclick="lick()">click</button>
+<script>
+    let stringvar = 'Tôi Là Ninh Đẹp Zai !!!!!!!'
+    let inputvar = ''
+    let i = 0
+    function lick(){
+        document.f.txt.value=''
+        document.f.txt.value = inputvar
+    }
+    function typeTextarea(){
+
+        if (inputvar.length<stringvar.length){
+            inputvar += stringvar[i]
+            i++
+        }else{
+            i = 0
+            inputvar=''
+        }
+        setTimeout('lick()',1)
+
+    }
+
+</script>
+</body>
+</html>

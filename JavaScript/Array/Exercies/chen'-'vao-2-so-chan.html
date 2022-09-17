@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>chèn '-' vào 2 số chẵn</title>
+</head>
+<body>
+<script>
+  let chuoi ='1341324098120394801'
+  let a = [chuoi[0]]
+  console.log(a)
+  for (let i = 1; i < chuoi.length; i++) {
+    if ((chuoi[i-1]%2===0)&&(chuoi[i]%2===0)){
+      a.push('-',chuoi[i])
+    }else{
+        a.push(chuoi[i])
+    }
+  }
+  a = a.join('')
+  console.log(a)
+</script>
+</body>
+</html>

@@ -88,4 +88,25 @@ Hàm slice() dùng để cắt phần tử của mảng
     console.log(cars.slice(1,2))
     // ['Subaru']
 
+Hàm indexOf() dùng để tìm ra vị trí của phần tử trong chuỗi hoặc mảng
+    let cars = ["Posche", "Toyota","BB", "Subaru", "BMW"]
+    console.log(cars.indexOf('BB'))
+    // 2
+    console.log(cars.indexOf('Kia'))
+    // -1 : không tìm thấy phần tử trong mảng
+    let cars = "Posche,ToyotaBB,Subaru,BMW"
+    console.log(cars.indexOf('BB'))
+    // 13
+
+Hàm split() chuyển chuỗi thành mảng.
+    let name = 'ninh yen van'
+    let nameArray = name.split(' ') // tách mỗi phần tử bằng dấu ' ' cách
+    console.log(nameArray)
+    // ['ninh','yen','van']
+    nameArray = name.split('') // tách mỗi phần tử là 1 ký tự của chuỗi
+     console.log(nameArray)
+    //['n', 'i', 'n', 'h',...]
+
+
+
 

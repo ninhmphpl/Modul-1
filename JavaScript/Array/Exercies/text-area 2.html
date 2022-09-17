@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Text - Eara</title>
+</head>
+<body>
+  <textarea id="txt" cols="40" rows="10" onkeydown="typeTextarea();"></textarea>
+<script>
+  let stringvar = 'Tôi Là Ninh Đẹp Zai !!!!!!!'
+  let inputvar = ''
+  function stopTimer () {
+    let b = document.getElementById('txt')
+    let c = b.value.length
+    // console.log(b.value.length)
+    if (inputvar.length<stringvar.length){
+      inputvar = stringvar.slice(0,c)
+    }else{
+      inputvar=''
+    }
+    document.getElementById('txt').value = ''
+    document.getElementById('txt').value = inputvar
+  }
+  function typeTextarea(){
+    setTimeout(stopTimer,1)
+    // console.log('done')
+  }
+
+</script>
+</body>
+</html>

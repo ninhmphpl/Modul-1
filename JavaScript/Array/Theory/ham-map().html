@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let cars = [
+        {
+            id: 'ninh',
+            location: 'hanoi',
+            job: 'it'
+        },
+        {
+            id: 'yen',
+            location: 'hanoi',
+            job: 'deginer'
+        },
+        {
+            id: 'van',
+            location: 'hoabinh',
+            job: 'famer'
+        }
+    ]
+    function funcitontest(inputvalue,index){   // var.map() có thể truyền vào 3 phần tử (value, index, array)
+        return {
+            id: inputvalue.id,
+            location: `thanh pho ${inputvalue.location}`, // sử dụng `String ${value.value}` để nối thêm chuỗi
+            location2: 'thanh pho ' + inputvalue.location,
+            job: inputvalue.job,
+            hobby: 'tv', // thêm trường vào opject
+            index: 'vị trí' + index,
+            index2: `vi trí 2 ${index}`
+
+        }
+
+    }
+    let newcars = cars.map(funcitontest)
+    console.log(newcars)
+</script>
+</body>
+</html>
