@@ -3,23 +3,20 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Luyen tap voi mang bai 1</title>
+    <title>luyen tap voi mang 01 bai 2</title>
 </head>
 <body>
-
-
-
 <script>
 let arr1 = new Array(10)
-let arr2 = new Array()
 for (let i = 0; i < arr1.length; i++) {
     arr1[i] =  Math.floor(Math.random()*20) 
     if (arr1[i]>=10){
-        arr2.push(arr1[i])
+        arr1.push(arr1[i])
     }
 }
-console.log(arr2)
-console.log(arr2.length)
+arr1.sort((a,b)=>{return b-a})
+console.log(arr1)
+console.log(arr1[0])
 
 </script>
 </body>
