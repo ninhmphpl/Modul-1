@@ -1,0 +1,26 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<script>
+let a = "nDKFdfDFFkFkdfDFFJj"   // Js trông cho phép thay đổi các kí tự trong chuỗi
+let b = ''                      //tạo chuỗi mới để tạo kết quả cho chuỗi mới
+console.log(a)
+for (let i = 0; i < a.length; i++) {
+    if (a[i].toLocaleUpperCase() == a[i]){
+        
+        b += a[i].toLocaleLowerCase()
+    }else{
+        b += a[i].toLocaleUpperCase()
+    }  
+}
+console.log(b)
+
+</script>
+    
+</body>
+</html>
