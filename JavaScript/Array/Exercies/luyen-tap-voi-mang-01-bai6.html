@@ -1,0 +1,25 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<script>
+let arr = new Array();
+for (let i = 0; i < 10; i++) {
+    let a = prompt(`nhap gia tri ${i}`)   
+    arr.push(a)
+}
+console.log(arr)
+let a = prompt('nhap gia tri muon tim')
+if (arr.indexOf(a) !== -1){
+    console.log('V in array')
+}else{
+    console.log('V not in array')
+}
+
+</script>
+</body>
+</html>
