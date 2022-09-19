@@ -1,0 +1,31 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="doyouloveme" style="width: 100% ; height: 100%;">
+        <h1>Do You Love Me</h1>
+        <button onclick="yes()">Yes</button>
+        <button id="idno"style="position: absolute;" onmouseover="no()">No</button>
+        
+    </div>
+<script>
+function yes(){
+    alert("<3")
+}
+function no() {
+    let a =parseInt(document.getElementById('doyouloveme').style.height)
+    console.log("no ~ a", a)
+    let b = parseInt(document.getElementById('doyouloveme').style.width)
+    console.log("no ~ b", b)
+    document.getElementById('idno').style.top = Math.floor(Math.random()*a) + '%'
+    document.getElementById('idno').style.left = Math.floor(Math.random()*b) + '%'
+    
+}
+</script>
+    
+</body>
+</html>
