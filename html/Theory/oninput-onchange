@@ -1,0 +1,7 @@
+thuộc tính oninput sẽ khởi động hàm khi bất kì kí tự nào được nhập vào
+vd: <input id="inputFahrenheit" type="number" placeholder="Fahrenheit"
+    oninput="temperatureConverter(this.value)">
+thuộc tính onchange sẽ khởi động hàm sau khi kết thúc nhập liệu
+vd: <input id="inputFahrenheit" type="number" placeholder="Fahrenheit"
+    onchange="temperatureConverter(this.value)">
+    
