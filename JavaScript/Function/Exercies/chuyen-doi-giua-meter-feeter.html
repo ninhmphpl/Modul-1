@@ -1,0 +1,28 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>chuyen doi giua meters va feeter</title>
+</head>
+<body>
+    <script>
+        let meters = prompt('input meters')
+        let feeter = prompt('input feeter')
+        function met(meter) {
+            foot = 3.279 * meter
+            return foot
+        }
+        function feet(foot) {
+            meter = 0.305 * foot
+            return meter
+        }
+        met(meters)
+        console.log("met(meters)", met(meters))
+        feet(feeter)
+        console.log("feet(feeter)", feet(feeter))
+        document.write(`${meters} meters = ${met(meters)} foot <br>`)
+        document.write(`${feeter} feedter = ${feet(feeter)} meter`)
+    </script>
+</body>
+</html>
