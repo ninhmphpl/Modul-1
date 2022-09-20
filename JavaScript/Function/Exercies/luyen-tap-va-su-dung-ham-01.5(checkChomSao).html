@@ -1,0 +1,27 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>bai 5</title>
+</head>
+<body>
+    <script>
+        let inputstar = prompt('nhap  ten trom sao')
+        checkstar(inputstar)
+        function checkstar(star) {
+            let a = 'Polaris, Aldebaran, Deneb, Vega, Altair, Dubhe, Regulus'.split(', ')
+            console.log("a", a)
+            let b = 'Ursa Minor, Tarurus, Cygnus, Lyra, Aquila, Ursa Major, Leo'.split(', ')
+            console.log("b", b)
+            for (let i = 0; i < a.length; i++) {
+                if (star == a[i]) {
+                    alert(`chom sao nay la ${b[i]}`)
+                }
+            }
+            
+        }
+        
+    </script>
+</body>
+</html>

@@ -1,0 +1,67 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ung dung quan ly su dung ham</title>
+    <style>
+        td{
+            width: 300px;
+            height: 50px;
+        }
+        tr{
+            background-color: aqua;
+        }
+        tr:nth-child(even){
+            background-color: gainsboro;
+        }
+        .button2{
+            background-color: green; width: 50%;height: 80%; float: left;border-radius: 10%;text-align: center;
+            color: white;
+            border: 2px solid pink;
+        }
+        .button1{
+            width: 150px;
+        }
+    </style>
+</head>
+<body>
+    <div style="text-align:center">
+        <h2>Add New Product</h2>
+        <div>
+            <input id="inputpoduct" type="text"><button onclick="addproduct()">Add</button>
+        </div>
+    </div>
+    <div style="display: flex;justify-content: center;align-items: center">
+        <div>
+            <table id="list"></table>
+        </div>
+    </div>
+<script>
+    let arr = []
+    let id = 0;
+    function createrow() {
+        chuoi = ''
+        for (let i = 0; i < arr.length; i++) {
+            chuoi += `<tr><td id = "id${i}">${arr[i]}</td>
+                <td class="button1"><button class='button2' onclick="edit('${i}')">Edit</button>    <button class='button2' onclick="deletetr(${i})">Delete</button></td></tr>`
+        }
+        document.getElementById('list').innerHTML = chuoi
+    }
+    function addproduct() {
+        let valueinput = document.getElementById('inputpoduct').value
+        arr.push(valueinput)
+        createrow()
+    }
+    function edit(i) {
+        let fix = prompt('Fix Product')
+        arr[i] = fix
+        createrow()
+    }
+    function deletetr(i) {
+        arr.splice(i,1)
+        createrow()
+    }
+</script>
+</body>
+</html>
