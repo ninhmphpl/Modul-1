@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Hien Thi Cac So Nguyen To Dau Tien</title>
+</head>
+<body>
+<script>
+  function hamsonguyento(a){
+      let ketqua = true
+      if ((a==1) || (a==0)){
+          ketqua = false
+      }
+      let canbac = parseInt(Math.sqrt(a));
+      for (let i = 2; i <= canbac ; i++) {
+          if ((a%i)==0){
+              ketqua = false
+              break
+          }
+      }
+      return ketqua;
+  }
+
+
+  let songuyento = 0
+  let hopso = 0
+  const arr = new Array();
+
+  do {
+      if (hamsonguyento(hopso)){
+          songuyento += 1
+          arr.push(hopso)
+        }
+        hopso++
+    }while (hopso<=1000)
+  console.log(arr)
+
+
+
+
+</script>
+</body>
+</html>
