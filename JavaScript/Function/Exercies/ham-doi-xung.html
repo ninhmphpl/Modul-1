@@ -1,0 +1,28 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ham Doi Xung</title>
+</head>
+<body>
+<script>
+    let a = 'adada'
+    function check(a) {
+        let i = 0
+        let j = a.length - 1
+        let flag = true
+        while (i<j) {
+            if (a[i]!==a[j]){
+                flag = false
+                break
+            }
+            i++
+            j--
+        }
+        return flag
+    }
+    console.log(check(a))
+</script>
+</body>
+</html>
