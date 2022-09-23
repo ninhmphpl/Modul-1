@@ -1,0 +1,32 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Property in OBJ</title>
+</head>
+<body>
+<script>
+let object = {name: 'ninh', address: 'hoa binh', age: 23}
+// for in sử dụng để chạy qua các thuộc tính của object
+for (const key in object) {
+    console.log(key)
+}
+
+
+// tạo mảng chứa các thuộc tính của object
+console.log(Object.keys(object));
+
+
+// tạo mảng chứa các giá trị của object
+console.log(Object.values(object));
+
+
+// tạo mảng 2 chiều chứa cả thuộc tính lẫn giá trị của object
+console.log(Object.entries(object));
+
+
+
+</script>
+</body>
+</html>
