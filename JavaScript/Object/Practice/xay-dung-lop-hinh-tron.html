@@ -1,0 +1,33 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Xay Dung Lop Hinh Tron</title>
+</head>
+<body>
+<script>
+var circle = function (radius,color) {
+    this.radius = radius
+    this.color = color
+    this.getRadius = function () {
+        return(this.radius)
+    }
+    this.getArea = function () {
+        return (this.radius**2*Math.PI) 
+    }
+    this.diameter = this.radius*2
+    
+}
+let circle1 = new circle(12,'red')
+console.log("circle1", circle1)
+circle1.color
+console.log("circle1.color", circle1.color)
+circle1.getArea()
+console.log("circle1.getArea()", circle1.getArea())
+circle1.diameter
+console.log("circle1.diameter", circle1.diameter)
+
+</script>
+</body>
+</html>

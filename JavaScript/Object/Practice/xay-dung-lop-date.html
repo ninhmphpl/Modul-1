@@ -1,0 +1,43 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Xay - dung - lop - date</title>
+</head>
+<body>
+<script>
+var myDate = function (date, day, month) {
+    this.date = date
+    this.day = day
+    this.month = month
+    this.getDate = function () {
+        return this.date
+    }
+    this.getDay = function () {
+        return this.day
+    }
+    this.getMonth = function () {
+        return this.month
+    }
+    this.setDate = function (date) {
+        this.date = date
+    }
+    this.setDay = function (day) {
+        this.date = day
+    }
+    this.setMonth = function (month) {
+        this.month = month
+    }
+}
+let today = new myDate('thursday',22,09)
+console.log("today", today)
+today.date
+console.log("today.date", today.date)
+today.getMonth()
+console.log("today.getMonth", today.getMonth())
+
+
+</script>
+</body>
+</html>

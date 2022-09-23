@@ -1,0 +1,28 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Object Constructor</title>
+</head>
+<body>
+<script>
+    // Constructor là Function tạo ra khuôn mẫu cho 1 OBJ
+    function user(firstName, lastName, avatar) {
+        this.firstName = firstName
+        this.lastName = lastName
+        this.avatar = avatar
+        this.getname = function () {
+            return `${this.firstName} ${this.lastName}`
+        }
+    }
+    var ninh = new user('pham', 'ninh', 'avatar')
+    var yen = new user('pham', 'yen', 'avatar')
+    // console.log(ninh.constructor); // xem cấu trúc hàm tạo ra OB
+    console.log(ninh);
+    console.log(yen);
+    ninh.getname()
+    console.log("ninh.getname()", ninh.getname())
+</script>
+</body>
+</html>

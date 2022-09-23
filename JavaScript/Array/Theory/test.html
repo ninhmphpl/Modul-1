@@ -5,20 +5,17 @@
     <title>Title</title>
 </head>
 <body>
-<script>
-    let tempt;
 
-    let arr = [43,42,52,23,0,326,12]
-    for (let i = 0; i < arr.length; i++) {
-        for (let j = i; j < arr.length; j++) {
-            if (arr[i]<arr[j]){
-               tempt = arr[i]
-                arr[i] = arr[j]
-                arr[j] = tempt
-            }
-        }
+    <button onClick="bar()" id="bar">bar</button>
+    <script>
+        document.getElementById('bar').onclick='bur()'
+        function bar() {
+        console.log('b');
     }
-    console.log(arr)
+        function bur() {
+        console.log('a');
+    }
+
 </script>
 </body>
 </html>

@@ -1,0 +1,41 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Object Prototype Basic</title>
+</head>
+<body>
+<script>
+ function user(firstName, lastName, avatar) {
+        this.firstName = firstName
+        this.lastName = lastName
+        this.avatar = avatar
+        this.getname = function () {
+            return `${this.firstName} ${this.lastName}`
+        }
+    }
+var ninh = new user('ninh','pham','avatar')
+var yen = new user('yen','pham','avatar')
+
+user.className = 'Code'
+console.log("ninh.className", ninh.className) // undefine
+
+
+user.prototype.classFirtName = 'CodeGym' //tạo thuộc tính phần prototype cho constructor
+console.log("yen.className", yen.classFirtName)
+console.log(ninh);
+console.log(yen);
+
+yen.classFirtName = 'noLearn' // tạo thuộc property cho contructor
+
+
+user.prototype.classFunction = function () {   // tạo method cho phần prototype của contructor
+    return this.classFirtName
+}
+user.prototype.classFunction()
+console.log("user.prototype.classFunction()", user.prototype.classFunction())
+
+</script>
+</body>
+</html>

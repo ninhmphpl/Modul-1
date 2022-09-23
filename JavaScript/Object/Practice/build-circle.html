@@ -1,0 +1,56 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>createCircle</title>
+</head>
+<body>
+<canvas contextmenu="2d" id="myCanvas" width="600px" height="700px" style="border: 2px solid black" ></canvas>
+<script>
+    // let canvas = document.getElementById("myCanvas")
+    // let ctx = canvas.getContext('2d')
+    // ctx.beginPath()
+    // ctx.arc(95,50,60,0,2*Math.PI); // tọa
+    // ctx.stroke();
+    // ctx.fillStyle = 'rgb(100,100,100)'
+    // ctx.fill()
+    // window.innerWidth
+    // console.log("window.innerWidth", window.innerWidth)
+    // window.innerHeight
+    // console.log("window.innerHeight", window.innerHeight)
+    function randomColor() {
+        let red = Math.floor(Math.random()*225)
+        let blue = Math.floor(Math.random()*225)
+        let green = Math.floor(Math.random()*225)
+        let color = `rgb(${red},${blue},${green})`
+        return color
+    }
+    function randomCircle() {
+        this.Color = randomColor()
+        this.radius = Math.floor(Math.random()*80)
+        this.x = Math.random()*window.innerWidth
+        this.y = Math.random()*window.innerHeight
+    }
+    var create = function (x,y,radius,Color) {
+        let ctx  = document.getElementById("myCanvas").getContext('2d')
+        ctx.beginPath()
+        ctx.arc(x,y,radius,0,2*Math.PI)
+        ctx.fillStyle = Color
+        ctx.fill()
+    }
+    function createCircles(numberCircles) {
+        for (let i = 0; i <= numberCircles; i++) {
+            var a = new randomCircle
+            create(a.x,a.y,a.radius,a.Color)
+            console.log(a);
+        }
+    }
+    createCircles(50)
+        
+
+        
+        
+</script>
+</body>
+</html>

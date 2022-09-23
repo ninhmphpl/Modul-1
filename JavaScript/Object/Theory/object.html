@@ -1,0 +1,47 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>First Object</title>
+</head>
+<body>
+<script>
+var  homeKey = "home"
+var myInfor = {  // khai báo 1 object
+    name: 'ninh',
+    address: 'hoa binh',
+    age: 23,
+    hobby: 'Pc',
+    [homeKey]: 'tram xa cu', // tạo thêm thuộc tính từ biến được khai báo từ bên ngoài
+    getName: function() {
+        return this.name
+    }
+}
+{    // lấy thuộc tính bên trong OBJ
+    // myInfor.name  // lấy thuộc tính bên trong object
+    // console.log("myInfor.name", myInfor.name) 
+}
+
+{//thêm thuộc tính vào OB
+
+    // myInfor.email = 'ninhmphp@gmail.com' // thêm thuộc tính trực tiếp
+    // myInfor['numberPhone'] = '037217594'// them thuộc tính
+    // console.log(myInfor);
+}
+
+{//xóa thuộc tính
+    // delete myInfor.homeKey //
+    // delete myInfor[homeKey] // xóa thuộc tính
+    // console.log(myInfor); // xóa thuộc tính bên trong object
+}
+
+{//hàm trong OBJ
+myInfor.getName
+console.log("myInfor.getName", myInfor.getName())
+//Function --> Phương thức / method
+//Other --> Thuộc tính / property
+}
+</script>
+</body>
+</html>

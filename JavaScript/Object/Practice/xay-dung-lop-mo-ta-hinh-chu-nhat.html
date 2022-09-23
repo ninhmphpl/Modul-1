@@ -1,0 +1,40 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Xây dựng lớp mô tả hình chữ nhật</title>
+</head>
+<body>
+<canvas id="myCanvas" width="500" height="500" style="border:1px solid #d3d3d3;">
+<script>
+    function Rectangle(width, height) {
+        this.width = width
+        this.height = height
+        this.area = this.width*this.height
+        this.perimeter = this.width*2 + this.height*2
+        this.createOnCanvas = function () {
+            let ctx = document.getElementById("myCanvas").getContext("2d")
+            ctx.beginPath()
+            let x =10
+            let y =10
+            ctx.moveTo(x,y)
+            x += this.width
+            ctx.lineTo(x,y)
+            y += this.height
+            ctx.lineTo(x,y)
+            x -= this.width
+            ctx.lineTo(x,y)
+            y -= this.height
+            ctx.lineTo(x,y)
+            ctx.stroke()
+        }
+        
+    }
+    let x = +prompt('nhap x')
+    let y = +prompt('nhap y')
+    let a = new Rectangle(x,y)
+    a.createOnCanvas()
+</script>
+</body>
+</html>
