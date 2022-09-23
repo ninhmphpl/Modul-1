@@ -1,0 +1,70 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Game đơn giản, di chuyển đối tượng</title>
+    <style>
+
+    </style>
+</head>
+<body>
+    <div style="border: salmon solid 5px; width: 500px; height: 500px;" id="display"></div>
+    
+    <script>
+        function hero(name, imgHero, id) {
+            this.id = id
+            this.name = name
+            this.imgHero = imgHero
+            this.speed = 1
+            this.create = function () {
+                document.getElementById('display').innerHTML = `<img id="${this.id}" src="${this.imgHero}" alt="${this.imgHero}" style="position:relative;left:0px; top:0px;">`
+            }
+            this.moveLeft = function () {
+                let element = document.getElementById(this.id);
+                element.style.left = parseInt(element.style.left) - this.speed + 'px';
+            }
+            this.moveRight = function () {
+                let element = document.getElementById(this.id);
+                console.log("hero ~ element", element.style.top)
+                
+                element.style.left = parseInt(element.style.left) + this.speed + 'px';
+                console.log(this.id, this.speed);
+            }
+            this.moveTop = function () {
+                let element = document.getElementById(this.id);
+                element.style.top = parseInt(element.style.top) - this.speed + 'px';
+            }
+            this.moveBotton = function () {
+                let element = document.getElementById(this.id);
+                element.style.top = parseInt(element.style.top) + this.speed + 'px';
+            }
+            this.move = function (evt) {
+                console.log('move');
+                switch (evt.keyCode) {
+                case 37:
+                    this.moveLeft();
+                    break;
+                case 39:
+                    this.moveRight();
+                    break;
+                case 38:
+                    this.moveTop();
+                    break;
+                case 40:
+                    this.moveBotton();
+                    break;
+                }
+            }
+        }
+        var circle = new hero('Circle',"download.png",'hero01')
+        circle.create()
+        circle.speed = 20
+
+
+        // var displayBox = document.getElementById('display')
+        window.addEventListener("keydown", test)
+        function test(evt){circle.move(evt)}
+    </script>
+</body>
+</html>
