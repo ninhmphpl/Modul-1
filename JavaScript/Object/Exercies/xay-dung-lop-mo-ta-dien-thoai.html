@@ -1,0 +1,157 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Phone</title>
+    <style>
+        table{
+            width: 300;
+            text-align: center;
+            border : 1px solid;
+            margin: 10px;
+            padding: 10px;
+        }
+        button{
+            width: 130px;
+            height: 25px;
+        }
+    </style>
+</head>
+<body onload="reset()">
+    <table aria-disabled="false">
+        <tr>
+            <td><button onclick="phone.turnOnOff()" style="width: 70px ; height: 20px; text-align: left;" id="idonoff">Turn On</button></td>
+            <td style="text-align: right; font-size: 8px;" id="battery"></td>
+        </tr>
+        <tr>
+            <td colspan="2"><textarea name="" id="display" cols="30" rows="5" placeholder="" style="resize: none; background-color: blue;color: white;"></textarea></td>
+        </tr>
+        <tr id="idmain">
+            <td id="idleft"><button disabled>Disabled</button></td>
+            <td id="idright"><button disabled>Cance</button></td>
+        </tr>
+        <tr>
+            <td><button onclick="phone.messageTyping()">Typing Message</button></td>
+            <td><button onclick="phone.readMessageSent()" style="font-size:10px">Read Message Sent</button></td>
+        </tr>
+        <tr>
+            <td><button onclick="phone.phoneCharging()">Charging</button></td>
+            <td><button onclick="phone.messageToPhone()" style="font-size:10px">Read Message to</button></td>
+            
+        </tr>
+    </table>
+<script>
+function Phone() {
+    this.name = this
+    this.battery = 20 // pin
+    this.messageTo =['tin nhan 1', 'tin nhan 2', 'tin nhan 3'] // tin nhắn đến
+    this.messageSent = [] // tin nhắn đi
+    this.phonePower = false // tình trạng hiện tại (on or off)
+    // bật tắt điện thoại
+    this.turnOnOff = function () {
+        if (this.phonePower){
+            this.phonePower = false
+            document.getElementById('idonoff').innerText = 'Turn on'
+            alert('see you again')
+        }else if (this.battery<=5) {
+            alert('Battery is not enought') 
+        }else{
+            this.phonePower = true
+            document.getElementById('idonoff').innerText = 'Turn off'
+            alert('Hello') 
+        }
+    }
+    // sạc điện thoại
+    this.phoneCharging = function () {
+        this.battery = 20
+    }
+    // soạn tin nhắn gửi :
+    this.messageTyping = function () {
+        if (!this.phonePower)return;         
+        dataButton('sendMassage')
+        this.batteryConsumption()
+    }
+    this.Clear = function () {
+        if (!this.phonePower)return;   
+        document.getElementById('display').value = ""
+        this.batteryConsumption()
+    }
+    // đọc tin nhắn đã gửi
+    this.readMessageSent = function () {
+        if (!this.phonePower)return;   
+        let string = ''
+        for (let i = this.messageSent.length-1; i >=0 ; i--) {
+           string += this.messageSent[i] + '\n'
+        }
+        document.getElementById('display').value = string
+        dataButton('none')
+        this.batteryConsumption()
+    }
+    // gửi tin nhắn
+    this.sendMassage = function () {
+        if (!this.phonePower)return;   
+        let text = document.getElementById('display').value
+        // console.log(text);
+        this.messageSent.push(text)
+        // console.log("Phone ~ this.messageSent", this.messageSent)
+        message.push(text)
+        // console.log(message);
+        document.getElementById('display').value = ''
+        this.batteryConsumption()
+    }
+    // xem tin nhắn đến
+    this.messageToPhone = function () {
+        if (!this.phonePower)return;
+        let string = ''
+        for (let i = 0; i < this.messageTo.length; i++) {
+           string += this.messageTo[i] + '\n'
+        }
+        document.getElementById('display').value = string
+        dataButton('none')
+        this.batteryConsumption()
+    }
+    // xem tin nhắn đã gửi
+    this.messageSentBox = function () {
+        if (!this.phonePower)return;
+        this.messageSent
+        dataButton('none')
+        this.batteryConsumption()
+    }
+    // tiêu thụ pin
+    this.batteryConsumption = function () {
+        if (!this.phonePower)return;
+        this.battery--
+        if (this.battery <= 0) {
+            this.phonePower=false
+            alert('your Phone will be off now')
+            document.getElementById('idonoff').innerText = 'Turn on'
+        }
+    }
+}
+window.addEventListener("click",reset)
+let message = ['tin nhan den', ' tin nhan 1', 'tin nhan 2']
+var phone = new Phone()
+// set Phone
+function reset() {
+    document.getElementById("battery").innerHTML = `Battery: ${phone.battery}`
+}
+function dataButton(name) {
+    switch(name){
+        case 'sendMassage':
+            document.getElementById('display').placeholder = "Typing your Message"
+            document.getElementById('idleft').innerHTML='<button onclick="phone.sendMassage()" id="idyes">Send Message</button>'
+            document.getElementById('idright').innerHTML='<button onclick="phone.Clear()" id="idno">Clear</button>'
+            break;
+        case 'none':
+            document.getElementById('idmain').innerHTML = '<td id="idleft"><button disabled>Disabled</button></td><td id="idright"><button disabled>Cance</button></td>'
+            break;
+        case 'on':
+            
+    }
+    
+}
+
+</script>
+</body>
+</html>
