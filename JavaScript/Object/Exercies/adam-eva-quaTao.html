@@ -1,0 +1,66 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        class Apple{
+            constructor(){
+                this.weight = 10
+            }
+            getWeight(){
+                return this.weight
+            }
+            setWeight(Weight){
+                return this.weight = Weight
+            }
+
+        } 
+        class Humman{
+            constructor(name){
+                this.name = name
+                this.weight = 0
+                this.appleEat = 0
+            }
+            getWeight(){
+                return this.weight
+            }
+            setWeight(Weight){
+                return this.weight = Weight
+            }
+            getAppleEat(){
+                return this.appleEat
+            }
+            setAppleEat(AppleEat){
+                return this.appleEat = AppleEat
+            }
+            eatApple(Apple){
+                if (Apple.getWeight()>0){
+                    Apple.setWeight(Apple.getWeight()-1)
+                    this.weight++
+                    this.appleEat++
+                }
+            }
+        }
+        var adam = new Humman('Adam')
+        var eva = new Humman('Eva')
+        var apple = new Apple()
+        var apple2 = new Apple()
+        while (apple.getWeight()>0) {
+            
+            adam.eatApple(apple)  
+            eva.eatApple(apple)
+            console.log(apple,adam,eva);   
+        }
+        while (apple2.getWeight()>0) {
+            
+            adam.eatApple(apple2)  
+            eva.eatApple(apple2)
+            console.log(apple2,adam,eva);   
+        }
+    </script>
+</body>
+</html>
